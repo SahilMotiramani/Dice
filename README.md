@@ -1,0 +1,2 @@
+# Dice
+Hosted dice game
