@@ -1,41 +1,122 @@
-.container {
-  width: 70%;
-  margin: auto;
-  text-align: center;
-}
+/* 🎲 Dice Game - Modern Professional CSS */
 
-.dice {
-  text-align: center;
-  display: inline-block;
-
+:root {
+  --bg-color: #2c2f36;
+  --accent-color: #4ECCA3;
+  --text-color: #EEEEEE;
+  --heading-shadow: #1f242b;
+  --font-main: 'Poppins', sans-serif;
+  --font-heading: 'Lobster', cursive;
+  --font-secondary: 'Indie Flower', cursive;
 }
 
 body {
-  background-color: #393E46;
+  background-color: var(--bg-color);
+  font-family: var(--font-main);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-h1 {
-  margin: 30px;
-  font-family: 'Lobster', cursive;
-  text-shadow: 5px 0 #232931;
-  font-size: 8rem;
-  color: #4ECCA3;
-}
-
-p {
-  font-size: 2rem;
-  color: #4ECCA3;
-  font-family: 'Indie Flower', cursive;
-}
-
-img {
-  width: 80%;
-}
-
-footer {
-  margin-top: 5%;
-  color: #EEEEEE;
+/* Container */
+.container {
+  width: 70%;
+  margin: 0 auto;
   text-align: center;
-  font-family: 'Indie Flower', cursive;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
 
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Dice */
+.dice {
+  text-align: center;
+  display: inline-block;
+  margin: 2rem;
+}
+
+.dice img {
+  width: 90%;
+  max-width: 150px;
+  border-radius: 10px;
+  background: #232931;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dice img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(78, 204, 163, 0.8);
+}
+
+/* Headings */
+h1 {
+  margin: 20px;
+  font-family: var(--font-heading);
+  text-shadow: 5px 0 var(--heading-shadow);
+  font-size: 6rem;
+  color: var(--accent-color);
+  animation: fadeInDown 1s ease-in-out;
+}
+
+/* Paragraph */
+p {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  font-family: var(--font-secondary);
+  margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem;
+  color: var(--text-color);
+  text-align: center;
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+footer:hover {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .container {
+    width: 90%;
+    padding: 2rem 1rem;
+  }
+
+  .dice {
+    margin: 1rem;
+  }
 }
